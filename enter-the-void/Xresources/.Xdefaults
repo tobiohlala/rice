@@ -1,0 +1,44 @@
+! special
+*.foreground:   #262626
+*.background:   #e4e4e4
+*.cursorColor:  #111111
+
+! black
+*.color0:       #fafafa
+*.color8:       #868686
+
+! red
+*.color1:       #48994f
+*.color9:       #48994f
+
+! green
+*.color2:       #50aa59
+*.color10:      #50aa59
+
+! yellow
+*.color3:       #60b468
+*.color11:      #60b468
+
+! blue
+*.color4:       #71bc78
+*.color12:      #71bc78
+
+! magenta
+*.color5:       #a246d1
+*.color13:      #a246d1
+
+! cyan
+*.color6:       #bc7190
+*.color14:      #bc7190
+
+! white
+*.color7:       #000000
+*.color15:      #000000
+
+URxvt.iso14755: false
+URxvt*scrollBar: false
+URxvt.internalBorder: 65
+
+URxvt*font: -artwiz-drift.de-medium-r-normal-*-10-*-*-*-*-*-*-*
+
+Xcursor.theme: classic-cursors
