@@ -1,40 +1,4 @@
-! special
-*.foreground:   #f2f3f4
-*.background:   #202020
-*.cursorColor:  #bc7190
-
-! black
-*.color0:       #202020
-*.color8:       #2f2f2f
-
-! red
-*.color1:       #d6334f
-*.color9:       #d6334f
-
-! green
-*.color2:       #eb386a
-*.color10:      #eb386a
-
-! yellow
-*.color3:       #db4a73
-*.color11:      #db4a73
-
-! blue
-*.color4:       #cd6180
-*.color12:      #cd6180
-
-! magenta
-*.color5:       #ba5270
-*.color13:      #cd6180
-
-! cyan
-*.color6:       #c06680
-*.color14:      #ba5270
-
-! white
-*.color7:       #afafaf
-*.color15:      #d9d9d9
-
+#include ".Xresources/colorscheme"
 
 URxvt.iso14755: false
 URxvt*scrollBar: false

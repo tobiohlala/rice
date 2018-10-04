@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/                 file:///usr/share/openbox/menu.xsd">
+    <menu id="root-menu" label="root-menu">
+        <separator label="    MENU    "/>
+		<item label="☽ ">
+			<action name="Execute">
+				<execute>cp /home/tobi/.Xresources/colorscheme-dark /home/tobi/.Xresources/colorscheme</execute>
+			</action>
+		</item>
+                <item label="☀">
+			<action name="Execute">
+				<execute>cp ~/.Xresources/colorscheme-light ~/.Xresources/colorscheme</execute>
+			</action>
+		</item>
+                <separator/>
+                <item label="_urxvt">
+			<action name="Execute">
+				<execute>urxvt</execute>
+			</action>
+		</item>
+		<item label="_files">
+			<action name="Execute">
+				<execute>pcmanfm</execute>
+			</action>
+		</item>
+		<item label="_www">
+			<action name="Execute">
+				<execute>firefox</execute>
+			</action>
+		</item>
+		<item label="_mail">
+			<action name="Execute">
+				<execute>thunderbird</execute>
+			</action>
+		</item>
+		<separator/>
+		<menu id="root-menu-82917" label="Graphics">
+			<item label="gcolor2">
+				<action name="Execute">
+					<execute>gcolor2</execute>
+				</action>
+			</item>
+			<item label="GIMP">
+				<action name="Execute">
+					<execute>gimp</execute>
+				</action>
+			</item>
+			<item label="Inkscape">
+				<action name="Execute">
+					<execute>inkscape</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="office" label="Office">
+			<item label="LibreOffice Writer">
+				<action name="Execute">
+					<execute>libreoffice --writer</execute>
+				</action>
+			</item>
+			<item label="LibreOffice Calc">
+				<action name="Execute">
+                    <execute>libreoffice --calc</execute>
+				</action>
+			</item>
+			<item label="LibreOffice Impress">
+				<action name="Execute">
+                    <execute>libreoffice --impress</execute
+                </action>
+			</item>
+			<item label="LibreOffice Base">
+				<action name="Execute">
+					<execute>libreoffice --base</execute>
+				</action>
+			</item>
+		</menu>
+		<separator/>
+        <menu execute="/opt/scripts/menu/wifi.sh" id="pipe-27536" label="Wifi"/>
+        <menu execute="/opt/scripts/menu/dns.sh" id="pipe-27537" label="DNS"/>
+		<separator/>
+		<menu id="root-menu-90184" label="Openbox">
+			<item label="Reconfigure">
+				<action name="Reconfigure"/>
+			</item>
+			<item label="Restart">
+				<action name="Restart"/>
+			</item>
+			<item label="Exit">
+				<action name="Exit"/>
+			</item>
+		</menu>
+		<menu id="root-menu-522528" label="System">
+			<item label="Reboot">
+				<action name="Execute">
+					<execute>sudo reboot</execute>
+				</action>
+            </item>
+            <item label="ZZZ">
+				<action name="Execute">
+                    <execute>sudo /usr/bin/ZZZ</execute>
+				</action>
+			</item>
+			<item label="Poweroff">
+				<action name="Execute">
+					<execute>sudo poweroff</execute>
+				</action>
+			</item>
+		</menu>
+		<separator/>
+		<item label="_Run">
+			<action name="Execute">
+				<command>
+                    gmrun
+                </command>
+			</action>
+		</item>
+	</menu>
+</openbox_menu>

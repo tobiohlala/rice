@@ -1,0 +1,16 @@
+# Set wallpaper
+~/.fehbg &
+
+# Set background color
+#xsetroot -solid "#2f9d66"
+
+# tint2 panels
+tint2 -c .config/tint2/tint2rc-bat-pill &
+tint2 -c .config/tint2/tint2rc-clock-pill &
+
+# Set display brightness
+xbacklight =20
+
+# Set volume
+amixer set Master 0%
+
