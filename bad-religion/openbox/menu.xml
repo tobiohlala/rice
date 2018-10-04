@@ -4,7 +4,7 @@
         <separator label="    MENU    "/>
 		<item label="☽ ">
 			<action name="Execute">
-				<execute>cp /home/tobi/.Xresources/colorscheme-dark /home/tobi/.Xresources/colorscheme</execute>
+				<execute>cp ~/.Xresources/colorscheme-dark ~/.Xresources/colorscheme</execute>
 			</action>
 		</item>
                 <item label="☀">
