@@ -1,0 +1,3 @@
+# rice is nice
+
+🍚
