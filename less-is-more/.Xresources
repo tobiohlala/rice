@@ -1,0 +1,45 @@
+twobwm.border_width:			8
+twobwm.outer_border:			4
+twobwm.unfocus_color:			#262626
+twobwm.focus_color:			#414141
+twobwm.fixed_color:			#bc7190
+twobwm.unkill_color:			#e91e63
+twobwm.fixed_unkill_color:		#b71c1c
+twobwm.outer_border_color:		#262626
+twobwm.inverted_colors:			true
+
+Xft.dpi:                                131
+Xft.antialias:                          true
+Xft.hinting:                            true
+Xft.hintstyle:                          hintfull
+Xft.rgba:                               rgb
+
+st.termname:				st-256color
+st.shell:				/bin/mksh
+st.font:				tewi2a:style=regular
+st.chscale:				1.2
+st.cwscale:                             1.1
+st.borderpx:				15
+st.cursorshape:				2
+st.blinktimeout:			0
+st.bellvolume:				0
+st.opacity:				255
+st.background:				#262626
+st.foreground:				#ffffff
+st.color0:                              #eeeeee
+st.color8:                              #a0a0a0
+st.color1:				#e2a76d
+st.color9:       			#e2a76d
+st.color2:       			#f0c674
+st.color10:      			#f0c674
+st.color3:       			#f3dd71
+st.color11:      			#f3dd71
+st.color4:       			#fff06e
+st.color12:      			#fff06e
+st.color5:       			#99d9c9
+st.color13:      			#99d9c9
+st.color6:       			#85abbd
+st.color14:      			#85abbd
+st.color7:                              #464646
+st.color15:                             #464646
+
