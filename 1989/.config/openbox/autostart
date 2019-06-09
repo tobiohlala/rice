@@ -1,0 +1,4 @@
+dunst &
+tint2 &
+pcmanfm --desktop -d &
+urxvt

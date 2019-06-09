@@ -1,0 +1,4 @@
+#define close2_width 6
+#define close2_height 6
+static unsigned char close2_bits[] = {
+   0x33, 0x3f, 0x1e, 0x1e, 0x3f, 0x33 };

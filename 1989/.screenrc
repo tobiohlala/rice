@@ -1,0 +1,11 @@
+term                rxvt-unicode-256color
+
+startup_message     off
+vbell               off
+altscreen           on
+nonblock            on
+defscrollback       10000
+
+backtick            1 0 5 $HOME/.scripts/screen/batteries
+
+caption             always "%{= wk} %-w %{= rw} %n %t %{-} %+w %= %{= wg} %1`    %c"

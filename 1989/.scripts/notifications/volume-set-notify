@@ -1,0 +1,5 @@
+#!/bin/bash
+amixer set Master "$@" > /dev/null
+VOL=$(amixer get Master | grep -o "[0-9]*%")
+xdotool keydown Ctrl key space keyup Ctrl
+notify-send -u low "volume" "$VOL"

@@ -1,0 +1,3 @@
+#!/bin/bash
+DATE=$(date +"%d. %b %Y, %H:%M")
+notify-send -u normal "$DATE"

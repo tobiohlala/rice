@@ -1,0 +1,4 @@
+#!/bin/bash
+SSID=$(iwgetid -r || echo "not connected")
+IP=$(ip addr show wlp3s0 | grep -oP "(?<=inet ).*(?=/)")
+notify-send -u normal "$SSID" "$IP"

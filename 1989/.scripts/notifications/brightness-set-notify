@@ -1,0 +1,5 @@
+#!/bin/bash
+xbacklight "$@" > /dev/null
+LUM=$(xbacklight -get | grep -o "^[0-9]*")
+xdotool keydown Ctrl key space keyup Ctrl
+notify-send -u low "brightness" "$LUM%"

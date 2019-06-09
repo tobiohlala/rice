@@ -1,0 +1,4 @@
+#define max_toggled_hover_width 6
+#define max_toggled_hover_height 6
+static unsigned char max_toggled_hover_bits[] = {
+   0x0c, 0x0c, 0x3f, 0x3f, 0x0c, 0x0c };
