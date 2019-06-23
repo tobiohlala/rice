@@ -1,0 +1,14 @@
+term                rxvt-unicode-256color
+
+startup_message     off
+vbell               off
+autodetach          on
+altscreen           on
+nonblock            on
+defscrollback       10000
+attrcolor           b ".I"
+
+backtick            1 0 5 ~/.scripts/screen/batteries
+
+caption always "%{= kg} "
+hardstatus  alwayslastline "%{= kw} %-w %{= rk} %n %t %{-} %+w %= %{= kg} %1`%: %c"

@@ -1,0 +1,5 @@
+#!/bin/bash
+while read -r; do
+    [[ $(mpc current) ]] && ~/.scripts/notify/mpd
+done < <(mpc idleloop player)
+

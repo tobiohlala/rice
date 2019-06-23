@@ -1,0 +1,70 @@
+# hotkey bindings
+
+XF86AudioRaiseVolume            :ExecCommand    ~/.scripts/notify/volume 2%+
+XF86AudioLowerVolume            :ExecCommand    ~/.scripts/notify/volume 2%-
+XF86AudioMute                   :ExecCommand    ~/.scripts/notify/mute
+XF86MonBrightnessUp             :ExecCommand    ~/.scripts/notify/brightness +3%
+XF86MonBrightnessDown           :ExecCommand    ~/.scripts/notify/brightness -3%
+XF86LaunchA                     :ExecCommand    urxvt
+XF86Explorer                    :ExecCommand    pcmanfm
+XF86Search                      :ExecCommand    dmenu_run -l 5 -fn "Termsyn:size=11" -nb "#262626" -nf "#afafaf" -sb "#262626" -sf "#ffbc8b"
+XF86Display                     :ExecCommand    scrot -q 100 -e 'mv $f ~/scrots && notify-send -u low "scrot" "$f"'
+
+# window bindings
+
+OnWindow Mod1 Mouse1            :MacroCmd           {Raise} {Focus} {StartMoving}
+OnWindowBorder Move1            :StartMoving
+OnWindow Mod1 Mouse3            :MacroCmd           {Raise} {Focus} {StartResizing NearestCorner}
+OnLeftGrip Move1                :StartResizing      bottomleft
+OnRightGrip Move1               :StartResizing      bottomright
+
+OnTitlebar Control Mouse1       :StartTabbing
+OnTitlebar Double Mouse1        :Maximize
+OnTitlebar Mouse1               :MacroCmd           {Raise} {Focus} {ActivateTab}
+OnTitlebar Move1                :StartMoving
+OnTitlebar Mouse3               :WindowMenu
+
+Control Mod4 Left               :TakeToPrevWorkspace
+Control Mod4 Right              :TakeToNextWorkspace
+
+Mod4 Left                       :FocusLeft
+Mod4 Right                      :FocusRight
+Mod4 Up                         :FocusUp
+Mod4 Down                       :FocusDown
+Mod4 Tab                        :NextWindow         {groups} (workspace=[current])  (workspace=[current]) !! FBCV13 !!
+Mod4 Shift Tab                  :PrevWindow         {groups} (workspace=[current])  (workspace=[current]) !! FBCV13 !!
+Mod1 Tab                        :NextTab
+Mod1 Shift Tab                  :PrevTab
+Mod4 Q                          :Close
+Mod4 F                          :Maximize
+Mod4 G                          :MoveTo             0 0 Center
+Mod4 Z                          :MoveTo             20 20 TopLeft
+Mod4 U                          :MoveTo             20 20 TopRight
+Mod4 B                          :MoveTo             20 20 BottomLeft
+Mod4 N                          :MoveTo             20 20 BottomRight
+Mod4 H                          :MoveLeft           30
+Mod4 Shift H                    :ResizeHorizontal   -5
+Mod4 J                          :MoveDown           30
+Mod4 Shift J                    :ResizeVertical     5
+Mod4 K                          :MoveUp             30
+Mod4 Shift K                    :ResizeVertical     -5
+Mod4 L                          :MoveRight          30
+Mod4 Shift L                    :ResizeHorizontal   5
+
+# desktop bindings
+
+OnDesktop Mouse1                :HideMenus
+OnDesktop Mouse2                :WorkspaceMenu
+OnDesktop Mouse3                :RootMenu
+
+Control Mod1 Left               :PrevWorkspace
+Control Mod1 Right              :NextWorkspace
+
+Control Mod1 M                  :ExecCommand        ~/.scripts/notify/mpd
+Control Mod1 N                  :ExecCommand        ~/.scripts/notify/wifi
+
+# general bindings
+
+Control Mod1 Delete             :Exit
+Control Mod1 Shift Delete       :Restart
+

@@ -1,0 +1,7 @@
+#include ".Xresources.d/colorscheme-dark-usugaki"
+
+URxvt.font:             xft:Termsyn:style=Regular:size=11
+URxvt.boldFont:         xft:Termsyn:style=Regular:size=11
+URxvt.scrollBar:        false
+URxvt.iso14755:         false
+URxvt.internalBorder:   25

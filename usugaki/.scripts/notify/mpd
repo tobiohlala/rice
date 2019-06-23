@@ -1,0 +1,16 @@
+#!/bin/bash
+DIR=$(mpc -f "%file%" current | grep -oP ".*(?=/)")
+ARTIST=$(mpc -f "%artist%" current)
+TITLE=$(mpc -f "%title%" current)
+
+convert "$HOME/music/$DIR/cover.jpg" \
+\( +clone  -alpha extract \
+-draw 'fill black polygon 0,0 0,15 15,0 fill white circle 15,15 15,0' \
+\( +clone -flip \) -compose Multiply -composite \
+\( +clone -flop \) -compose Multiply -composite \
+\) -alpha off -compose CopyOpacity -composite \
+-thumbnail 196x196 /tmp/cover.png
+
+xdotool sleep 0.200 keydown Ctrl key space keyup Ctrl
+notify-send -u normal -i /tmp/cover.png "$ARTIST" "$TITLE"
+rm /tmp/cover.png

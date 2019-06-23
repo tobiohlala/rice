@@ -1,0 +1,6 @@
+#!/bin/bash
+case "$1" in
+	"pre")	notify-send -u critical "rsnapshot" "backup in progress" ;;
+	"post")	notify-send -u critical "rsnapshot" "backup finished" ;;
+esac
+

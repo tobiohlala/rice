@@ -1,0 +1,5 @@
+#!/bin/bash
+amixer set Master toggle > /dev/null
+MUTE=$(amixer get Master | grep -oP "(?<=\[)o..?(?=\])")
+xdotool sleep 0.100 keydown Ctrl key space keyup Ctrl
+notify-send -u low "volume" "$MUTE"

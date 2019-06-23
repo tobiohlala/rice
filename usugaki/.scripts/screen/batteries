@@ -1,0 +1,11 @@
+#!/bin/bash
+while IFS= read -r line; do
+    charge=$(echo $line | grep -o "[a-zA-Z]*")
+    capacity=$(echo $line | grep -o "[0-9]*")
+    case "$charge" in
+        "Charging")     echo -ne "\u2191" ;;
+        "Discharging")  echo -ne "\u2193" ;;
+        *)              echo -ne "\u00b7" ;;
+    esac
+    echo -n "$capacity "
+done <<< $(acpi | grep -oP "(?<=: )[a-zA-Z]*, [0-9]*(?=%)")

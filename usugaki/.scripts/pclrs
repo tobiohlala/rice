@@ -1,0 +1,22 @@
+#!/bin/bash
+
+black="$(tput setaf 0)"
+red="$(tput setaf 1)"
+green="$(tput setaf 2)"
+yellow="$(tput setaf 3)"
+blue="$(tput setaf 4)"
+magenta="$(tput setaf 5)"
+cyan="$(tput setaf 6)"
+white="$(tput setaf 7)"
+reset="$(tput sgr0)"
+
+echo
+echo -ne "${black}\u2588\u2588 "
+echo -ne "${green}\u2588\u2588 "
+echo -ne "${yellow}\u2588\u2588 "
+echo -ne "${blue}\u2588\u2588 "
+echo -ne "${magenta}\u2588\u2588 "
+echo -ne "${cyan}\u2588\u2588 "
+echo -e "${white}\u2588\u2588${reset}"
+echo
+

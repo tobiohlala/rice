@@ -1,0 +1,6 @@
+#!/bin/bash
+SSID=$(iw wlp3s0 info | grep ssid | cut -d' ' -f2)
+SSID=${SSID:-not connected}
+IP=$(ip addr show wlp3s0 | grep -oP "(?<=inet ).*(?=/)")
+xdotool sleep 0.200 keydown Ctrl key space keyup Ctrl
+notify-send -u normal "$SSID" "$IP"

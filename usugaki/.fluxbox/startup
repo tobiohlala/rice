@@ -1,0 +1,18 @@
+#!/bin/sh
+
+export XDG_MENU_PREFIX="lxde-"
+
+setxkbmap -layout de -option caps:ctrl_modifier
+xset r rate 200 45
+xrdb ~/.Xresources
+
+unclutter &
+pcmanfm --desktop &
+dunst &
+tint2 &
+mpd &
+
+~/.scripts/mpd/mpdnotifyd &
+
+exec fluxbox -no-toolbar -no-slit
+
