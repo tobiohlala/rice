@@ -37,18 +37,22 @@ Mod1 Tab                        :NextTab
 Mod1 Shift Tab                  :PrevTab
 Mod4 Q                          :Close
 Mod4 F                          :Maximize
-Mod4 G                          :MoveTo             0 0 Center
-Mod4 Z                          :MoveTo             20 20 TopLeft
-Mod4 U                          :MoveTo             20 20 TopRight
-Mod4 B                          :MoveTo             20 20 BottomLeft
-Mod4 N                          :MoveTo             20 20 BottomRight
+Mod4 Control G                  :MoveTo             0 0 Center
+Mod4 Control Z                  :MoveTo             20 20 TopLeft
+Mod4 Control U                  :MoveTo             20 20 TopRight
+Mod4 Control B                  :MoveTo             20 20 BottomLeft
+Mod4 Control N                  :MoveTo             20 20 BottomRight
 Mod4 H                          :MoveLeft           30
+Mod4 Control H                  :MoveTo             20 0 Left
 Mod4 Shift H                    :ResizeHorizontal   -5
 Mod4 J                          :MoveDown           30
+Mod4 Control J                  :MoveTo             0 20 Bottom
 Mod4 Shift J                    :ResizeVertical     5
 Mod4 K                          :MoveUp             30
+Mod4 Control K                  :MoveTo             0 20 Top
 Mod4 Shift K                    :ResizeVertical     -5
 Mod4 L                          :MoveRight          30
+Mod4 Control L                  :MoveTo             20 0 Right
 Mod4 Shift L                    :ResizeHorizontal   5
 
 # desktop bindings
@@ -60,7 +64,7 @@ OnDesktop Mouse3                :RootMenu
 Control Mod1 Left               :PrevWorkspace
 Control Mod1 Right              :NextWorkspace
 
-Control Mod1 M                  :ExecCommand        ~/.scripts/notify/mpd
+Control Mod1 M                  :ExecCommand        ~/.scripts/tint2/mpctoggle
 Control Mod1 N                  :ExecCommand        ~/.scripts/notify/wifi
 
 # general bindings
