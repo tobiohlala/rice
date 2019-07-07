@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+herbstclient -i |
+while read line; do
+	case $line in
+	tag_changed*)
+		T="%{O10}"
+		IFS=$'\t' read -ra TAGS <<< "$(herbstclient tag_status)"
+		for i in "${TAGS[@]}" ; do
+			case ${i:0:1} in
+				'#')	T="$T%{T2F#dc7ed7}  ${i:1}  %{T1F-}" ;;
+				*)	T="$T%{F#666666}  ${i:1}  %{F-}" ;;
+			esac
+		done
+		;;
+	REFRESH_PANEL*SMALL*)
+		CLOCK="%{T2}$(date +"%H:%M") %{T1}"
+		LUM="%{F#365b73}$(xbacklight -get | grep -o ^[0-9]*)%{O25F-}"
+		VOL="%{F#365b73}$(amixer get Master | grep -oP "(?<=\[)[0-9]*(?=\%)")%{F-}"
+		;;
+	REFRESH_PANEL*BIG*)
+		BAT="%{F#45b484}$(cat /sys/class/power_supply/BAT{0,1}/capacity | xargs)%{O25F-}"
+		;;
+	esac
+	echo "%{T1l}$T%{r}$VOL $LUM%{O15}$BAT%{O15}$CLOCK%{O10}"
+done | lemonbar \
+	-g 1920x25 \
+	-F "#64bff5" \
+	-B "#1c1c1c" \
+	-f "-*-termsyn-medium-r-*-*-14-*-*-*-*-*-*-*" \
+	-f "-*-termsyn-bold-r-*-*-14-*-*-*-*-*-*-*"\
+	2> /dev/null | sh &
+
+
+# emit hooks to update lemonbar
+while true; do
+	herbstclient emit_hook REFRESH_PANEL BIG
+	for i in {1..10}; do
+		herbstclient emit_hook REFRESH_PANEL SMALL
+		sleep 3
+	done
+done &
+

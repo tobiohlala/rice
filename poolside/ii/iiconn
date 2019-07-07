@@ -1,0 +1,9 @@
+#!/bin/bash
+
+s=irc.freenode.net
+n=NICK
+
+ii -s $s -n $n &
+sleep 10
+echo "/j nickserv identify $(cat $HOME/irc/$s/ident)" > $HOME/irc/$s/in
+

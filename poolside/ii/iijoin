@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# ii colorized read channel out
+
+s="irc.freenode.net"
+
+declare -A NICK_COLOR
+
+
+echo "/j $c" > "$HOME/irc/$s/in"
+
+tail -f ~/irc/$s/$c/out |
+while read -r line; do
+	# suppress status messages
+	# grep "^[0-9]* -!-" <<< $line > /dev/null && continue
+
+	# unobtrusive status messages
+	if [[ $(grep "^[0-9]* -!- " <<< $line) ]]; then
+		STATUS=$(sed -r "s/^[0-9]+ -!- (.*)\(.*\)(.*)/\1\2/g" <<< $line)
+
+		COLOR_STATUS=$(tput setaf 8)
+		printf "$COLOR_STATUS%s\n" "$STATUS"
+
+		continue
+	fi
+
+	NICK=$(grep -oP "(?<=<).*(?=>)" <<< $line)
+	MSG=$(grep -oP "(?<=>).*(?=$)" <<< $line)
+
+	# random nickname colors
+	[[ ${NICK_COLOR[$NICK]+_} ]] || NICK_COLOR[$NICK]=$(( 1 + $RANDOM % 6 ))
+
+	COLOR_MSG=$(tput sgr0)
+	COLOR_NICK=$(tput setaf "${NICK_COLOR[$NICK]}")
+	printf "$COLOR_NICK%-10s" $NICK
+	echo "$COLOR_MSG$MSG" | fold -s -w $(( $(tput cols) - 10 )) | sed -e "2,\$s/^/           /"
+done 
+

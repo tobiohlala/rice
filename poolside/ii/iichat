@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# write ii in
+
+s="irc.freenode.net"
+
+while read MSG; do
+	echo "$MSG" > $HOME/irc/$s/$c/in
+done
+
