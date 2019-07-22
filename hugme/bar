@@ -36,7 +36,7 @@ clock() {
 battery() {
 	while true; do
 		CAP=`cat /sys/class/power_supply/BAT0/capacity`
-		case "$(cat /sys/class/power_supply/BAT1/status)" in
+		case "$(cat /sys/class/power_supply/BAT0/status)" in
 			D*)	STAT="" ;;
 			*)	STAT="\uf0e7" ;;
 		esac
