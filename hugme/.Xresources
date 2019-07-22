@@ -1,0 +1,8 @@
+#include ".Xresources.d/pigeon-night"
+
+URxvt.font:             xft:envypn:style=Regular:size=10
+URxvt.boldFont:         xft:envypn:style=Regular:size=10
+URxvt.scrollBar:        false
+URxvt.iso14755:         false
+URxvt.internalBorder:   5
+URxvt.letterSpace:      0
