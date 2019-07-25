@@ -1,0 +1,19 @@
+#include ".Xresources.d/dull"
+
+!*.foreground:		#000000
+!*.background:		#eeeeee
+!*.cursorColor:		#9cd8e7
+
+Xft.dpi:		96
+Xft.hinting:		1
+Xft.hintstyle:		hintlight
+Xft.antialias:		1
+Xft.rgba:		rgb
+
+URxvt.font:             xft:FantasqueSansMono Nerd Font Mono:style=Regular:size=9
+URxvt.boldFont:         xft:FantasqueSansMono Nerd Font Mono:style=Bold:size=9
+URxvt.italicFont:	xft:FantasqueSansMono Nerd Font Mono:style=Italic:size=9
+URxvt.scrollBar:        false
+URxvt.iso14755:         false
+URxvt.internalBorder:   5
+URxvt.letterSpace:      0
