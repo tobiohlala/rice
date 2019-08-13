@@ -1,0 +1,54 @@
+#!/bin/bash
+
+FIFO=~/.lemonbar.fifo
+
+n="lemonbar"
+g="1600x25"
+f=-gbdfed-creep-regular-r-normal-*-16-*-*-*-*-*-*-*
+BG="#fdf6e3"
+FG="#ffa800"
+
+
+clock() {
+	while true; do
+		echo "C`date +%H:%M`"
+		sleep 1
+	done
+}
+
+battery() {
+	while true; do
+		CAP=`cat /sys/class/power_supply/BAT0/capacity`
+		echo "B$CAP%"
+		sleep 10
+	done
+}
+
+wifi() {
+	while true; do
+		echo "W`iw wlp3s0 info | grep -oP '(?<=ssid ).*$'`"
+		sleep 5
+	done
+}
+
+
+trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
+
+
+[ -p "$FIFO" ] || mkfifo $FIFO
+
+clock   > $FIFO &
+battery > $FIFO &
+wifi    > $FIFO &
+
+while read -r line; do
+	case $line in
+		C*)	C="${line#?}" ;;
+		B*)	B="${line#?}" ;;
+		W*)	W="${line#?}" ;;
+	esac
+	echo "%{c}$B %{O10}%{F#1c1c1c}$C %{F-O10}$W"
+done < $FIFO | lemonbar -p -n $n -g $g -f $f -B $BG -F $FG | sh &
+
+wait
+
