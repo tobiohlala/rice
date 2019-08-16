@@ -1,0 +1,80 @@
+#!/bin/bash
+
+FIFO=~/.lemonbar.fifo
+
+n="lemonbar"
+g="1600x25+0+0"
+f1="creep:size=12"
+f2="FontAwesome:size=10"
+BG="#fdf6e3"
+FG="#5a524a"
+RED="#ff3d4b"
+YELLOW="#f8af56"
+
+
+clock() {
+	while true; do
+		echo "C`date +%H:%M`"
+		sleep 1
+	done
+}
+
+battery() {
+	while true; do
+		CAP=`cat /sys/class/power_supply/BAT0/capacity`
+		case "$(cat /sys/class/power_supply/BAT0/status)" in
+			D*)	STAT="" ;;
+			*)	STAT="%{F$YELLOW}\uf0e7%{F-}" ;;
+		esac
+		if (( 0 < CAP && CAP <= 20 )); then
+			SYM="%{F$RED}\uf244%{F-}"
+		elif (( 20 < CAP && CAP <= 30 )); then
+			SYM="%{F$RED}\uf243%{F-}"
+		elif (( 30 < CAP && CAP <= 40 )); then
+			SYM="\uf243"
+		elif (( 40 < CAP && CAP <= 60 )); then
+			SYM="\uf242"
+		elif (( 60 < CAP && CAP <= 80 )); then
+			SYM="\uf241"
+		else
+			SYM="\uf240"
+		fi
+		echo "B%{T3}$STAT $SYM%{T1}"
+		sleep 10
+	done
+}
+
+wifi() {
+	while true; do
+		SSID="`iw wlp3s0 info | grep -oP '(?<=ssid ).*$'`"
+		if [ $SSID ]; then
+			WIFI="\uf1eb"
+		else
+			WIFI="\uf141"
+		fi
+		echo "W%{T3}$WIFI%{T1O5} $SSID"
+		sleep 5
+	done
+}
+
+
+trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
+
+
+[ -p "$FIFO" ] || mkfifo $FIFO
+
+clock   > $FIFO &
+battery > $FIFO &
+wifi    > $FIFO &
+
+while read -r line; do
+	case $line in
+		C*)	C="${line#?}" ;;
+		B*)	B="${line#?}" ;;
+		W*)	W="${line#?}" ;;
+	esac
+	echo -e "%{l} %{c}$B $W%{r} "
+done < $FIFO | lemonbar -p -n $n -g $g -f $f1 -f $f2 -B $BG -F $FG | sh &
+
+wait
+

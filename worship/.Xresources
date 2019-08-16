@@ -1,0 +1,28 @@
+#include ".Xresources.d/worship"
+
+Xft.autohint:			0
+Xft.lcdfilter:			lcddefault
+Xft.hintstyle:			hintfull
+Xft.hinting:			1
+Xft.antialias:			1
+Xft.rgba:			rgb
+
+*font:				xft:creep:style=Regular:size=12
+
+XTerm*scaleHeight:		1.2
+XTerm*borderWidth:		0
+XTerm*internalBorder:		10
+XTerm*termName:			xterm-256color
+XTerm*vt100.metaSendsEscape:	true
+XTerm*v100.saveLines:		10240
+XTerm*vt100.scrollBar:		false
+XTerm*vt100.bellIsUrgent:	true
+XTerm*allowBoldFonts:		false
+XTerm*scrollKey:		true
+XTerm*fullscreen:		never
+XTerm*cutToBeginningOfLine:	false
+XTerm*cutNewline:		false
+XTerm*charClass:		33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+XTerm*on2Clicks:		word
+XTerm*on3Clicks:		line
+
