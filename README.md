@@ -1,11 +1,9 @@
 # latest :rice:
 
-[worship](https://github.com/off-world/rice/blob/master/worship)
+[watertown](https://github.com/off-world/rice/blob/master/watertown)
 
-[font](https://github.com/romeovs/creep)  
-[wallpaper](https://github.com/off-world/rice/blob/master/worship/wallpaper.png)  
-[colorscheme](https://github.com/off-world/rice/blob/master/worship/.Xresources.d/worship)  
+[font](https://github.com/AppleDesignResources/SanFranciscoFont)
+[wallpaper](https://github.com/off-world/rice/blob/master/watertown/wallpaper.png)  
+[colorscheme](https://github.com/off-world/rice/blob/master/watertown/.Xresources.d/sol)  
 
-artwork by [Josan Gonzalez](https://josan.artstation.com/)
-
-![scrot](https://github.com/off-world/rice/blob/master/worship/scrot.png)
+![scrot](https://github.com/off-world/rice/blob/master/watertown/scrot.png)
